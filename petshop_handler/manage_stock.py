@@ -23,3 +23,4 @@ def add_new_product(**kwargs: dict):
         if current_product["name"] == received_product["name"]: 
             current_product["avaliable_units"] += received_product["avaliable_units"]
             return f"Produto com nome {current_product['name']} foi reabastecido"
+        
