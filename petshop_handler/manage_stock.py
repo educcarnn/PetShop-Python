@@ -10,6 +10,11 @@ def add_new_product(**kwargs: dict):
     except KeyError:
         return "Estão faltando chaves obrigatórias no dicionário."
     
+
+    if received_product["avaliable_units"] < 1:  # tratar exceção != levantar exceção
+        raise ValueError("unidades abaixo de 1 não podem ser passadas")  # throw
+
+
     if not products:  
         products.append(received_product)
         return received_product
